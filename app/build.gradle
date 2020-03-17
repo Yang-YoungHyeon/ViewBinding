@@ -23,6 +23,16 @@ android {
         }
     }
 
+    /* You must install Android Studio 3.6 or higher.  */
+    viewBinding {
+        enabled = true
+    }
+    /* If you are Android Studio 4.0 or higher, write as follows. */
+    /*
+    buildFeatures {
+        viewBinding = true
+    }
+    */
 }
 
 dependencies {
