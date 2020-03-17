@@ -2,17 +2,25 @@ package com.sample.myapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
+
 /** Binding class name automatically generated for xml name */
 import com.sample.myapplication.databinding.ActivityMainBinding //viewBinding
 
 class MainActivity : AppCompatActivity() {
-    //Binding
+    //viewBinding
     private lateinit var viewBinding : ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
-        viewBinding.tvTitle.setText("This is viewBinding...")
+        //viewBinding init
+        viewBinding = ActivityMainBinding.inflate(layoutInflater)
+
+        //setContentView
+        setContentView(viewBinding.root)
+
+        //view Using
+        viewBinding.tvTitle.text = "This is Title.."
+        viewBinding.tvSubTitle.setText("This is subTitle..")
     }
 }
